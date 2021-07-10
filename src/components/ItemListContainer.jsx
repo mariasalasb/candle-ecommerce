@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NavBar() {
+function ItemListContainer() {
     return (
         <div>
             
@@ -8,7 +8,4 @@ function NavBar() {
     )
 }
 
-export default NavBar
-
-//rfc con opción de exportar
-
+export default ItemListContainer

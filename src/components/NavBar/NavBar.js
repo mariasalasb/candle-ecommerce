@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {MenuItems} from "./MenuItem"
 import {Button} from "../Button"
+import {CartWidget} from "../CartWidget"
 import './NavBar.css'
 
 class NavBar extends Component{
@@ -9,6 +10,7 @@ class NavBar extends Component{
     handleClick=() =>{
         this.setState({clicked: !this.state.clicked})
     }
+
     render(){
         return (
             <nav className="NavBarItems">
@@ -27,7 +29,7 @@ class NavBar extends Component{
                         )
                     })}
                 </ul>
-                <Button>Sign up</Button>
+                <CartWidget onClick={this.handleClick}></CartWidget>
             </nav>
         )
     }

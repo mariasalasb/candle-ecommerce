@@ -18,10 +18,5 @@ export const MenuItems=[
         title: 'Contáctanos',
         url: '#',
         cName: 'nav-links'
-    },
-    {
-        title: 'Suscríbete',
-        url: '#',
-        cName: 'nav-links-mobile'
     }
 ]

@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+}
+
+img{
+    width: 850px;
+    height: 450px;
+    margin-left: 240px;
+    align-items: center;
+}
+
+@media screen and (max-width:960px){
+    img{
+        width: 100%;
+    }
+}

@@ -9,9 +9,9 @@ function ItemListContainer({source}){
     return(
       <>
         <img src={source} alt="imagen de carrusel"></img>
-        <div>
+        {/* <div>
           <ItemCount stock={5} initial={1} onAdd={handleCount}/>
-        </div>
+        </div> */}
       </>
     );
   }

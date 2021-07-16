@@ -11,6 +11,8 @@
     color: #fff;
     justify-self: start;
     cursor: pointer;
+    margin-right: 200px;
+    margin-bottom: 0;
 }
 
 .fa-gripfire{
@@ -31,6 +33,8 @@
     width: 70vw;
     justify-content: end;
     margin-right: 2rem;
+    margin-bottom: 0;
+    margin-right: 0;
 }
 
 .nav-links{

@@ -3,22 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import lights from './lights.jpg';
-
-// const MyComponent=(props)=>{
-//   useEffect(function(){},0)
-//   useEffect(()=>{
-//     return=>{
-//       console.log('cleanup')
-//     }
-//   })
-
-//   console.log('montar y renderizar mi componente')
-//   console.log('renderizar componente')
-//   return <>
-//     <h1>Soy el componente My Component</h1>
-//   </>
-// }
+import image1 from './assets/lights.jpg'
 
 
 function App() {
@@ -30,14 +15,8 @@ function App() {
 
   return (
     <div className="App">
-     <NavBar />
-     <ItemListContainer source={lights}></ItemListContainer >
-     {/* <button onClick={()=>setState(!state)}>CLICK</button>
-
-     <MyComponent prop={} estado/>
-     <button onClick={cambiarEstado}>CAMBIAR ESTADO</button> */}
-      {state ? <h1>TRUE</h1> : <h1>FALSE</h1>}
-
+      <NavBar />
+      <ItemListContainer source={image1}></ItemListContainer >
     </div>
   );
 } 

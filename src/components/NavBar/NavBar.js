@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {MenuItems} from "./MenuItem"
 import {Button} from "../Button/Button"
-import {CartWidget} from "../CartWidget/CartWidget"
+import CartWidget from "../CartWidget/CartWidget"
 import './NavBar.css'
 
 class NavBar extends Component{
@@ -28,8 +28,8 @@ class NavBar extends Component{
                             </li>
                         )
                     })}
+                    <CartWidget onClick={this.handleClick}></CartWidget>
                 </ul>
-                <CartWidget onClick={this.handleClick}></CartWidget>
             </nav>
         )
     }

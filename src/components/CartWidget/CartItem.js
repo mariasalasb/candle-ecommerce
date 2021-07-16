@@ -5,7 +5,8 @@ import './CartWidget.css'
 function CartItem({initial,stock,image,nombre}) {
     
     const [cant,setCantidad]=useState(1)
-
+    const [enabled,setAble]=useState(1)
+    
     const handleAdd=()=>{
         if(cant<stock){
             setCantidad(cant+1)
@@ -17,7 +18,12 @@ function CartItem({initial,stock,image,nombre}) {
         }
     }
      const handleCount=()=>{
-        alert(`Estás por pagar: ${cant} ${nombre}`)
+        if(stock>0){
+            alert(`Estás por pagar: ${cant} ${nombre}`)
+        }
+        else{
+            setAble(!enabled)
+        }
     }
 
     return (
@@ -41,7 +47,7 @@ function CartItem({initial,stock,image,nombre}) {
                 </Col>
             </Row>
             <Row>
-                <Button className="boton-de-pago" onClick={handleCount} >PAGAR</Button>
+                <Button className='boton-de-pago' onClick={handleCount}  >PAGAR</Button>
             </Row>
         </Container>
     )

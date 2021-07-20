@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {MenuItems} from "./MenuItem"
-import {Button} from "../Button/Button"
 import CartWidget from "../CartWidget/CartWidget"
 import './NavBar.css'
 

@@ -1,5 +1,5 @@
-import React , { Component , useState} from "react";
-import {Popover, PopoverHeader, PopoverBody } from "reactstrap";
+import React , {  useState} from "react";
+import {Popover, PopoverBody } from "reactstrap";
 import CartItem from "./CartItem";
 import './CartWidget.css'
 import image1 from '../../assets/hersheys.png'

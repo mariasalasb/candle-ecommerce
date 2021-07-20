@@ -1,12 +1,19 @@
 h1{
     text-align: center;
 }
-
-img{
+.banner{
     width: 850px;
-    height: 450px;
     margin-left: 240px;
-    align-items: center;
+    margin-bottom: 50px;
+}
+img{
+    width: 400px;
+    height: 400px;
+    margin-left: 20px;
+}
+p{
+    margin-left: 20px;
+    font-weight: 600;
 }
 
 @media screen and (max-width:960px){

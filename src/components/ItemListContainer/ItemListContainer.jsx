@@ -1,17 +1,12 @@
 import React from 'react'
 import './ItemListContainer.css'
-import ItemCount from '../ItemCount/ItemCount';
+import ItemList from './ItemList';
 
-const handleCount=(cant)=>{
-  alert(`ud ha agreagado: ${cant}`)
-}
 function ItemListContainer({source}){
-    return(
+      return(
       <>
-        <img src={source} alt="imagen de carrusel"></img>
-        {/* <div>
-          <ItemCount stock={5} initial={1} onAdd={handleCount}/>
-        </div> */}
+        <img src={source} alt="imagen de carrusel" className="banner"></img>
+        <ItemList/>
       </>
     );
   }

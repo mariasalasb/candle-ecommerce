@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {NavLink} from 'react-router-dom'
 import {MenuItems} from "./MenuItem"
 import CartWidget from "../CartWidget/CartWidget"
 import './NavBar.css'
@@ -21,9 +22,9 @@ class NavBar extends Component{
                     {MenuItems.map((item,index)=>{
                         return(
                             <li key={index}>
-                                <a className={item.cName} href={item.url}>
+                                <NavLink to={item.url} activeClassName="nav-links-active" className={item.cName}>
                                     {item.title}
-                                </a>
+                                </NavLink>
                             </li>
                         )
                     })}

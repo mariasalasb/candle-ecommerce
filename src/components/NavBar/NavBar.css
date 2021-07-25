@@ -42,7 +42,9 @@
     text-decoration: none;
     padding: 00.5rem 1rem;
 }
-
+.nav-links-active{
+    color: red;
+}
 .nav-links:hover{
     background-color: #FE9202;
     border-radius: 4px;

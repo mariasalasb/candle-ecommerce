@@ -1,0 +1,17 @@
+.contenedor_detalle{
+    margin-top: 5%;
+}
+.imagen_detalle_producto{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width:960px){
+    .cont{
+        background-color: blue;
+        margin-top: 0;
+    }
+    .imagen_detalle_producto{
+        justify-content: center;
+    }
+}

@@ -23,13 +23,20 @@ function ItemList() {
         }, [])
 
     console.log(itemList)
+  
+  const[detail, setDetail]=useState([])
+
+  const Click=() =>{
+      setDetail(0)
+  }
+  console.log(detail)
 
     return (
         <Row>
             {itemList.map((item)=>{
                 return(
                     <Col md={12} lg={4} key={item.id}>
-                        <img src={item.image}></img>
+                        <img src={item.image} /* onClick={Click} */></img>
                         <p>{item.name}</p>
                         <p>{item.price} ARS</p>
                     </Col>

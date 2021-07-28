@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {NavLink} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 import {MenuItems} from "./MenuItem"
 import CartWidget from "../CartWidget/CartWidget"
 import './NavBar.css'
@@ -14,7 +14,7 @@ class NavBar extends Component{
     render(){
         return (
             <nav className="NavBarItems">
-                <h1 className="navbar-logo">Candle<i className="fab fa-gripfire"></i> </h1>
+                <Link to='/'><h1 className="navbar-logo">Candle<i className="fab fa-gripfire"></i> </h1></Link>
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
@@ -22,7 +22,7 @@ class NavBar extends Component{
                     {MenuItems.map((item,index)=>{
                         return(
                             <li key={index}>
-                                <NavLink to={item.url} activeClassName="nav-links-active" className={item.cName}>
+                                <NavLink to={item.url}  className={item.cName}>
                                     {item.title}
                                 </NavLink>
                             </li>

@@ -20,7 +20,7 @@ function App() {
               <Route exact path="/"> {/*exact path="/category/:categoryId" lo que va luego de : es parametro*/}
                 <ItemListContainer source={image1} />
               </Route>
-               <Route exact path= '/detail' component={ItemDetail}/>
+               <Route exact path= '/item/1' component={ItemDetail}/>
           </Container>
         </Switch>
       </Router>

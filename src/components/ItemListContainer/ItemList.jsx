@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react'
+import {Link} from 'react-router-dom'
 import { Item } from './Item'
 import {Row,Col} from "reactstrap";
 import './ItemListContainer.css'
@@ -36,7 +37,7 @@ function ItemList() {
             {itemList.map((item)=>{
                 return(
                     <Col md={12} lg={4} key={item.id}>
-                        <img src={item.image} /* onClick={Click} */></img>
+                        <Link to='/item/1'><img src={item.image} /* onClick={Click} */></img></Link>
                         <p>{item.name}</p>
                         <p>{item.price} ARS</p>
                     </Col>

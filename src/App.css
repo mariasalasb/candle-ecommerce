@@ -20,4 +20,7 @@ div>p{
   margin-bottom: 2px;
   font-size: 1.4rem;
 }
+nav>a{
+  text-decoration: none;
+}
 

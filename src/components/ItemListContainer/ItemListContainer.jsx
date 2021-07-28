@@ -24,7 +24,7 @@ function ItemListContainer({source}){
       <>
         <img src={source} alt="imagen de carrusel" className="banner"></img>
         <ItemList/>
-        <ItemDetailContainer/>
+        {/* <ItemDetailContainer/> */}
       </>
     );
   }

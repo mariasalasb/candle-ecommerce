@@ -6,17 +6,17 @@ export const MenuItems=[
     },
     {
         title: 'Velas',
-        url: '/velas',
+        url: '/category/velas',
         cName: 'nav-links'
     },
     {
         title: 'Luces',
-        url: '/luces',
+        url: '/category/luces',
         cName: 'nav-links'
     },
     {
         title: 'Contáctanos',
-        url: '/contacto',
+        url: '/category/contacto',
         cName: 'nav-links'
     }
 ]

@@ -43,7 +43,7 @@
     padding: 00.5rem 1rem;
 }
 .nav-links-active{
-    color: red;
+    color: yellow;
 }
 .nav-links:hover{
     background-color: #FE9202;

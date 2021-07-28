@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetail from './components/ItemDetailContainer/ItemDetail';
 import image1 from './assets/lights.jpg'
 import {Container} from "reactstrap";
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 
@@ -20,7 +21,7 @@ function App() {
               <Route exact path="/"> {/*exact path="/category/:categoryId" lo que va luego de : es parametro*/}
                 <ItemListContainer source={image1} />
               </Route>
-               <Route exact path= '/item/1' component={ItemDetail}/>
+               <Route exact path= '/detail/:detailId' component={ItemDetailContainer}/>
           </Container>
         </Switch>
       </Router>

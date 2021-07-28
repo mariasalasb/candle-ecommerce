@@ -5,7 +5,7 @@ import image4 from '../../assets/velarosajazmin.jpg'
 
 export const Item=[
     {
-        id:1,
+        id:'1',
         name:'Vela Duo Chicle',
         description:'Aroma chicle',
         image:image1,
@@ -13,7 +13,7 @@ export const Item=[
         price: 600
     },
     {
-        id:2,
+        id:'2',
         name:'Vela Sándalo',
         description:'Aroma sándalo',
         image:image2,
@@ -21,7 +21,7 @@ export const Item=[
         price: 600
     },
     {
-        id:3,
+        id:'3',
         name:'Vela Chicle Trío',
         description:'Aroma chicle',
         image:image3,
@@ -29,7 +29,7 @@ export const Item=[
         price: 700
     },
     {
-        id:4,
+        id:'4',
         name:'Vela Love Letteres',
         description:'Aroma rosa y jazmín',
         image:image4,

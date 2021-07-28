@@ -37,7 +37,7 @@ function ItemList() {
             {itemList.map((item)=>{
                 return(
                     <Col md={12} lg={4} key={item.id}>
-                        <Link to='/item/1'><img src={item.image} /* onClick={Click} */></img></Link>
+                        <Link to={`/detail/${item.id}`}><img src={item.image}></img></Link>
                         <p>{item.name}</p>
                         <p>{item.price} ARS</p>
                     </Col>

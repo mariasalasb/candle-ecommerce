@@ -9,7 +9,7 @@ export const Item=[
         name:'Vela Duo Chicle',
         description:'Aroma chicle',
         image:image1,
-        stock:5,
+        stock:40,
         price: 600
     },
     {

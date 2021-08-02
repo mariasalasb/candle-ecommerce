@@ -22,7 +22,7 @@ class NavBar extends Component{
                     {MenuItems.map((item,index)=>{
                         return(
                             <li key={index}>
-                                <NavLink to={item.url}  className={item.cName}>
+                                <NavLink to={item.url}  className={item.cName} exact activeClassName='nav-links-active'>
                                     {item.title}
                                 </NavLink>
                             </li>

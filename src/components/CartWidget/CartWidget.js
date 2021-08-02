@@ -11,7 +11,7 @@ const cart=[
         cantidad:1,
         nombre:'VELA HERSHEYS',
         init:1,
-        stock:0
+        stock:7
     }
 ]
 

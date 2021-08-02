@@ -7,12 +7,16 @@ import './ItemListContainer.css'
 
 function ItemList() {
     const[itemList, setItemList]=useState([])
+    const[loading,setLoading]=useState(true)
 
   useEffect(() => {
+        setLoading(true)
         const task = new Promise ((resuelto, rechazado)=>{
           let status=200
           if(status===200){
-            setTimeout(()=>{resuelto(Item)},2000)
+            setTimeout(()=>{
+              setLoading(false);
+              resuelto(Item)},2000)
             }
           else{
             rechazado('NO OK')
@@ -25,16 +29,10 @@ function ItemList() {
 
     console.log(itemList)
   
-  const[detail, setDetail]=useState([])
-
-  const Click=() =>{
-      setDetail(0)
-  }
-  console.log(detail)
-
     return (
         <Row>
-            {itemList.map((item)=>{
+            {loading && 'CARGANDO..'}
+            {!loading && itemList.map((item)=>{
                 return(
                     <Col md={12} lg={4} key={item.id}>
                         <Link to={`/detail/${item.id}`}><img src={item.image}></img></Link>

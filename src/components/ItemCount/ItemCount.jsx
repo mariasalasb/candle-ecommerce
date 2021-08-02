@@ -1,35 +1,58 @@
-import React, {useState} from 'react'
+import React, {useState}  from 'react'
+import {Link} from 'react-router-dom'
+import {Container,Row,Col,Button} from "reactstrap";
+import '../CartWidget/CartWidget.css'
 
-function ItemCount({initial,stock,onAdd}){
-    const [cantidad,setCantidad]=useState(1)
+function ItemCount({stock, childToParent}) {
+
+    const BotonPagar =()=>{
+        return<>
+        <Link to='/cart'><Button className='boton-de-pago' >Terminar mi compra</Button></Link>
+        </>
+    }
+    const BotonCarrito =()=>{
+        return<>
+        <Button className='boton-de-pago'  onClick={() => childToParent({cant}, setBoton('Pagar'))}>Agregar al carrito</Button>
+        </>
+    }
+
+    const [tipoBoton,setBoton]=useState('Carrito')
+    const [cantidadComprar,setCantidadComprar]=useState()
+    const Bot = tipoBoton === 'Carrito' ? BotonCarrito : BotonPagar
+
+    
+    const [cant,setCantidad]=useState(1)
+    const[initial,setInitial]=useState(1)
+    
     const handleAdd=()=>{
-        if(cantidad<stock){
-            setCantidad(cantidad+1)
+        if(cant<stock){
+            setCantidad(cant+1)
         }
     }
     const handleRemove=()=>{
-        if(cantidad>initial){
-            setCantidad(cantidad-1)
+        if(cant>initial){
+            setCantidad(cant-1)
         }
     }
-    const handleOnAdd=()=>{ //en lugar de pasar directamente el onAdd creo esta funcion  para que sea escalable
-        onAdd(cantidad)
-    }
-    return(
-      <>
-        <div className="card text-center w-50">
-            <div className="card-header">
-                <h4>ItemCount</h4>
-            </div>
-            <div className="card-body">
-                <button onClick={handleRemove}>-</button>
-                <label className="alert alert-white">{cantidad}</label>
-                <button onClick={handleAdd}>+</button>
-                <button className="btn btn-primary btn-block" onClick={handleOnAdd}> Add to cart</button>
-            </div>
-        </div>
-      </>
-    );
-  }
+    
+    return (
+        <Container>
+            <Row>
+                <p><span>{cant}</span></p>
+            </Row>
+            <Row>
+                <Col className="button-operator button-plus"> 
+                    <button onClick={handleRemove}>-</button>    
+                </Col>
+                <Col className="button-operator">
+                    <button onClick={handleAdd}>+</button>    
+                </Col>
+            </Row>
+            <Row>
+                <Bot/>
+            </Row>
+        </Container>
+    )
+}
 
 export default ItemCount

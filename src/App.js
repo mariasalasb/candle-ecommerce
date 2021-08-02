@@ -12,11 +12,16 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 
 function App() {
 
+  function onkeydown(e){
+    e.key==='a' ? e.preventDefault() : console.log(e)
+  }
+
   return (
     <div className="App">
       <Router>
            <NavBar /> {/*va fuera del switch porque permanece en / pero dentro del router porque necesitamos que tenga funcionalidad de navegacion*/}
         <Switch>
+          {/*<input onKeyDown={onkeydown}></input>*/}
           <Container fluid>
               <Route exact path="/"> {/*exact path="/category/:categoryId" lo que va luego de : es parametro*/}
                 <ItemListContainer source={image1} />

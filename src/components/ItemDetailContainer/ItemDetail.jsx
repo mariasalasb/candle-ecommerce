@@ -10,28 +10,6 @@ import '../CartWidget/CartWidget.css'
 
 function ItemDetail({item}) {
 
-    /*const onAdd=()=>{
-        setCantidadComprar('1')
-        setBoton('Pagar')
-    }
-
-
-    const BotonPagar =()=>{
-        return<>
-        <Link to='/cart'><Button className='boton-de-pago' >Terminar mi compra</Button></Link>
-        </>
-    }
-    const BotonCarrito =()=>{
-        return<>
-        <Button className='boton-de-pago' onClick={onAdd}>Agregar al carrito</Button>
-        </>
-    }
-
-    const [tipoBoton,setBoton]=useState('Carrito')
-    const [cantidadComprar,setCantidadComprar]=useState()
-    console.log(cantidadComprar)
-    const Bot = tipoBoton === 'Carrito' ? BotonCarrito : BotonPagar*/
-
     const [cantidadComprar, setCantidadComprar] = useState();
   
     const childToParent = (childdata) => {

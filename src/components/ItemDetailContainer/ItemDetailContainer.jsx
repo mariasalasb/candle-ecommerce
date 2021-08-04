@@ -8,15 +8,6 @@ function ItemDetailContainer() {
 
         const[itemDet, setItemDet]=useState([])
 
-        /*useEffect(() => {
-              const task = new Promise ((resuelto, rechazado)=>{
-                  setTimeout(()=>{resuelto(Item[0])},2000)
-              })
-              task
-              .then((resp)=>setItem(resp))
-              .catch(err=>{console.log('un error'); return err})
-              }, [])*/
-        
         useEffect(() => {
             try{
                 setItemDet(Item.filter(i=>i.id===detailId))
@@ -24,9 +15,7 @@ function ItemDetailContainer() {
                 console.log(error)
             }
         }, [])
-      
-          console.log(itemDet)
-      
+            
           return (
               <ItemDetail item={itemDet}/>
           )

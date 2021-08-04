@@ -11,12 +11,10 @@ import '../CartWidget/CartWidget.css'
 function ItemDetail({item}) {
 
     const [cantidadComprar, setCantidadComprar] = useState();
-  
+
     const childToParent = (childdata) => {
         setCantidadComprar(childdata);
     }
-
-    console.log(cantidadComprar)
 
     return (
         <Container className="contenedor_detalle">
@@ -31,8 +29,7 @@ function ItemDetail({item}) {
                             <h2>{i.name}</h2> <br></br>
                             <p>{i.description}</p><br></br>
                             <p>{i.price} ARS</p><br></br>
-                            <ItemCount stock={i.stock} childToParent={childToParent}/>
-                            {/* <Bot/> */}
+                            <ItemCount stock={i.stock} item={i} childToParent={childToParent}/>
                         </Col>
                         </>
                 )})}

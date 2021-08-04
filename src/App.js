@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
@@ -7,7 +7,8 @@ import ItemDetail from './components/ItemDetailContainer/ItemDetail';
 import image1 from './assets/lights.jpg'
 import {Container} from "reactstrap";
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-
+import CartContext from './context/CartContext';
+import { Item } from './components/ItemListContainer/Item';
 
 
 function App() {
@@ -15,6 +16,12 @@ function App() {
   function onkeydown(e){
     e.key==='a' ? e.preventDefault() : console.log(e)
   }
+
+  const[cart,setCart]=useState ([{item:{},quantity:''}])
+
+  const[itemCompra, setItemCompra]=useState({})
+  const [cantidadCompra,setCantidadCompra]=useState()
+  console.log(cantidadCompra)
 
   return (
     <div className="App">
@@ -26,7 +33,9 @@ function App() {
               <Route exact path="/"> {/*exact path="/category/:categoryId" lo que va luego de : es parametro*/}
                 <ItemListContainer source={image1} />
               </Route>
-               <Route exact path= '/detail/:detailId' component={ItemDetailContainer}/>
+              <CartContext.Provider value={[cantidadCompra,setCantidadCompra,{itemCompra}, setItemCompra,cart,setCart]}>
+                <Route exact path= '/detail/:detailId' component={ItemDetailContainer}/>
+              </CartContext.Provider>
           </Container>
         </Switch>
       </Router>

@@ -1,23 +1,42 @@
-import React, {useState}  from 'react'
+import React, {useState,useEffect,useContext}  from 'react'
 import {Link} from 'react-router-dom'
 import {Container,Row,Col,Button} from "reactstrap";
+import CartContext from '../../context/CartContext';
 import '../CartWidget/CartWidget.css'
 
-function ItemCount({stock, childToParent}) {
+//function ItemCount({stock, childToParent})
 
+function ItemCount({stock,item}) {
+    const [cantidadCompra,setCantidadCompra] = useContext(CartContext);
+    const[itemCompra, setItemCompra]=useContext(CartContext);
+    const[cart,setCart]=useContext(CartContext);
+
+    console.log(item)
+ 
     const BotonPagar =()=>{
         return<>
         <Link to='/cart'><Button className='boton-de-pago' >Terminar mi compra</Button></Link>
         </>
     }
-    const BotonCarrito =()=>{
+    /* const BotonCarrito =()=>{
         return<>
         <Button className='boton-de-pago'  onClick={() => childToParent({cant}, setBoton('Pagar'))}>Agregar al carrito</Button>
+        </>
+    } */
+    const handle=()=>{
+        setCantidadCompra(cant);
+        //setItemCompra({item});
+        //setCart([{item},{cant}])
+        setBoton('Pagar')
+    }
+    
+    const BotonCarrito =()=>{
+        return<>
+        <Button className='boton-de-pago' onClick={handle}>Agregar al carrito</Button>
         </>
     }
 
     const [tipoBoton,setBoton]=useState('Carrito')
-    const [cantidadComprar,setCantidadComprar]=useState()
     const Bot = tipoBoton === 'Carrito' ? BotonCarrito : BotonPagar
 
     

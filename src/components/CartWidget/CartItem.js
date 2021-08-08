@@ -1,55 +1,29 @@
-import React, {useState}  from 'react'
-import {Container,Row,Col,Button} from "reactstrap";
+import React, {useContext} from 'react'
+import {Link} from 'react-router-dom'
+import {CartContext} from '../../context/CartContext';
 import './CartWidget.css'
 
-function CartItem({initial,stock,image,nombre}) {
-    
-    const [cant,setCantidad]=useState(1)
-    const [enabled,setAble]=useState(1)
-    
-    const handleAdd=()=>{
-        if(cant<stock){
-            setCantidad(cant+1)
-        }
-    }
-    const handleRemove=()=>{
-        if(cant>initial){
-            setCantidad(cant-1)
-        }
-    }
-     const handleCount=()=>{
-        if(stock>0){
-            alert(`Estás por pagar: ${cant} ${nombre}`)
-        }
-        else{
-            setAble(!enabled)
-        }
-    }
+function CartItem() {
+    const {cart}=useContext(CartContext);
 
     return (
-        <Container>
-            <Row>
-                <Col>            
-                    <img src={image} alt="mini imagen producto" className="imagen-producto-mini" />
-                </Col>
-                <Col>
-                    <Row>
-                        <p><span>{cant}</span> {nombre}</p>
-                    </Row>
-                    <Row>
-                        <Col className="button-operator button-plus"> 
-                            <button onClick={handleRemove}>-</button>    
-                        </Col>
-                        <Col className="button-operator">
-                            <button onClick={handleAdd}>+</button>    
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-            <Row>
-                <Button className='boton-de-pago' onClick={handleCount}  >PAGAR</Button>
-            </Row>
-        </Container>
+        <>            
+            {cart.length!==0 && <div className="section" >
+                {cart.map(i =>
+                    <div key={i.item.id} className="grilla">
+                        <img src={i.item.image} className="imagen-producto-mini colu-5"></img>
+                        <p className="colu-2">{i.quantity} x</p>
+                        <p className="colu-5">{i.item.name} </p>
+                    </div>)}
+                <Link to ='/cart'><button className="boton2">Ver Carrito</button></Link>
+            </div> }
+
+            {cart.length===0 && <div className="section" >
+            <h2 className="colu-12 texto">No hay ítems en tu carrito</h2>
+            <Link to ='/'><button className="boton2">Volver a la tienda</button></Link>
+         </div> }
+
+        </>
     )
 }
 

@@ -13,9 +13,9 @@
     left: 500px;
 }
 
-.imagen-producto-mini{
-    width: 100px;
-    height: 100px;
+.grilla> .imagen-producto-mini{
+    width: 5rem;
+    height: 5rem;
     margin: 0;
 }
 
@@ -67,5 +67,78 @@ span{
     border: none;
     font-weight: 1000;
     font-size: 1.3rem;
-    
 }
+
+.grilla{
+    display: grid;
+    gap:10px 12px;
+    grid-template-columns: repeat(12, 1fr);
+    margin-top: 5px;
+    /*grid-template-rows: ;*/
+}
+
+.section{
+    margin: 0 auto;
+    max-width: 50rem;
+    width: 100%;
+    background-color: beige;
+    border-radius: 2%;
+    padding: 1rem;
+}
+.colu-1, .colu-2 , .colu-3, .colu-4, .colu-5{
+    margin: 0 auto;
+}
+.colu-1{
+    grid-column-end: span 1;
+}
+.colu-2{
+    grid-column-end: span 2;
+}
+.colu-3{
+    grid-column-end: span 3;
+}
+.colu-5{
+    grid-column-end: span 5;
+}
+.colu-9{
+    grid-column-end: span 9;
+}
+
+.imagen-resumen{
+    border-radius: 2%;
+    width: 10rem;
+    height: 10rem;
+}
+
+i{
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.total{
+    text-align: right;
+}
+
+.texto{
+    text-align: center;
+}
+a > .boton,a > .boton2 {
+    border-radius: 2%;
+    padding: 8px 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer; 
+    background-color: #DD9B2D;
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+}
+a > .boton{
+    margin-left: 23vw;
+}
+a > .boton2{
+    margin-left: 55px;
+    margin-top: 10px;
+}
+

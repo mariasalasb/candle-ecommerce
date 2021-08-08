@@ -4,7 +4,7 @@ import CartItem from "./CartItem";
 import './CartWidget.css'
 import image1 from '../../assets/hersheys.png'
 
-const cart=[
+/* const cart=[
     {   
         id:1,
         image: image1,
@@ -13,7 +13,7 @@ const cart=[
         init:1,
         stock:7
     }
-]
+] */
 
 function CartWidget({onClick}){
     const [popoverOpen,setpopover]=useState(false)
@@ -33,13 +33,14 @@ function CartWidget({onClick}){
             className="contenido-carrito"
         >
             <PopoverBody>
-                {
+                <CartItem/>
+                {/* {
                     cart.map(cart=>(
                         <div key={cart.id}>
                             <CartItem stock={cart.stock} initial={cart.init} image={cart.image} nombre={cart.nombre} /> 
                         </div>
                     ))
-                }
+                } */}
             </PopoverBody>
         </Popover>
       </>

@@ -9,7 +9,7 @@ import {Container} from "reactstrap";
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CartContext, {CartProvider} from './context/CartContext';
 import { Item } from './components/ItemListContainer/Item';
-
+import Cart from './components/CartWidget/Cart';
 
 function App() {
 
@@ -17,16 +17,10 @@ function App() {
     e.key==='a' ? e.preventDefault() : console.log(e)
   }
 
-  /*const[cart,setCart]=useState ([{item:{},quantity:''}])
-
-  const[itemCompra, setItemCompra]=useState({})
-  const [cantidadCompra,setCantidadCompra]=useState()
-  console.log({itemCompra})*/
-
-
   return (
     <div className="App">
       <Router>
+      <CartProvider>
            <NavBar /> {/*va fuera del switch porque permanece en / pero dentro del router porque necesitamos que tenga funcionalidad de navegacion*/}
         <Switch>
           {/*<input onKeyDown={onkeydown}></input>*/}
@@ -34,11 +28,11 @@ function App() {
               <Route exact path="/"> {/*exact path="/category/:categoryId" lo que va luego de : es parametro*/}
                 <ItemListContainer source={image1} />
               </Route>
-              <CartProvider>
                 <Route exact path= '/detail/:detailId' component={ItemDetailContainer}/>
-              </CartProvider>
-          </Container>
-        </Switch>
+                <Route exact path='/cart' component={Cart}/>
+                </Container>
+            </Switch>
+        </CartProvider>
       </Router>
     </div>
   );

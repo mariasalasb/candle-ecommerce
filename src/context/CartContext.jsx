@@ -16,10 +16,10 @@ export const CartProvider = ({children}) => {
 
     const addToCart = (item, quantity) => {
         if(isInCart(item.id)){
-            quantity += quantity
             let index = cart.findIndex((e) => e.item.id === item.id)
+            const oldQt = cart[index].quantity
             cart.splice(index, 1)
-            setCart([...cart, {'item': item , 'quantity': quantity }])
+            setCart([...cart, {'item': item , 'quantity': quantity + oldQt}])
             //console.log(getTotal)
         }else{
             setCart([...cart, {'item': item , 'quantity': quantity }])

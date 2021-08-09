@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import {Link} from 'react-router-dom'
-import { Item } from './Item'
 import {Row,Col} from "reactstrap";
+import { getFirestore } from '../../servicios/firebaseService'
 import './ItemListContainer.css'
 
 
@@ -9,7 +9,15 @@ function ItemList() {
     const[itemList, setItemList]=useState([])
     const[loading,setLoading]=useState(true)
 
-  useEffect(() => {
+    useEffect(() => {
+      const dbQuery=getFirestore()
+      dbQuery.collection('items').get()
+      .then(resp=> setItemList(resp.docs.map(ite=>({...ite.data(), id: ite.id}),setLoading(false) )))
+  }, [])
+
+  console.log(itemList)
+
+  /*useEffect(() => {
         setLoading(true)
         const task = new Promise ((resuelto, rechazado)=>{
           let status=200
@@ -25,9 +33,7 @@ function ItemList() {
         task
         .then((resp)=>setItemList(resp))
         .catch(err=>{console.log('un error'); return err})
-        }, [])
-
-    console.log(itemList)
+        }, [])*/
   
     return (
         <Row>

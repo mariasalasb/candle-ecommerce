@@ -2,18 +2,6 @@ import React , {  useState} from "react";
 import {Popover, PopoverBody } from "reactstrap";
 import CartItem from "./CartItem";
 import './CartWidget.css'
-import image1 from '../../assets/hersheys.png'
-
-/* const cart=[
-    {   
-        id:1,
-        image: image1,
-        cantidad:1,
-        nombre:'VELA HERSHEYS',
-        init:1,
-        stock:7
-    }
-] */
 
 function CartWidget({onClick}){
     const [popoverOpen,setpopover]=useState(false)

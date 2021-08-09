@@ -4,7 +4,6 @@ export const CartContext = createContext()
 
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
-    console.log(cart)
 
     const removeItem = (idborrar)=>{
         const oldList= cart.filter(item=>item.item.id!==idborrar)

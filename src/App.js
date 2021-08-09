@@ -1,14 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetail from './components/ItemDetailContainer/ItemDetail';
 import image1 from './assets/lights.jpg'
 import {Container} from "reactstrap";
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import CartContext, {CartProvider} from './context/CartContext';
-import { Item } from './components/ItemListContainer/Item';
+import  {CartProvider} from './context/CartContext';
 import Cart from './components/CartWidget/Cart';
 
 function App() {

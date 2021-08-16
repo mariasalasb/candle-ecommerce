@@ -44,6 +44,8 @@
     font: 26px bold;
 }
 
+
+
 span{
     color: #DD9B2D;
     font-size: 1.3rem;
@@ -67,6 +69,15 @@ span{
     border: none;
     font-weight: 1000;
     font-size: 1.3rem;
+}
+.grilla>.boton-de-pago{
+    background-color: #DD9B2D;
+    border: solid 2px #DD9B2D;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .grilla{
@@ -103,7 +114,9 @@ span{
 .colu-9{
     grid-column-end: span 9;
 }
-
+.colu-12{
+    grid-column-end: span 12;
+}
 .imagen-resumen{
     border-radius: 2%;
     width: 10rem;

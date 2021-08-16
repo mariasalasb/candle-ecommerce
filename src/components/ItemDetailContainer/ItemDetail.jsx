@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {Container,Row,Col} from "reactstrap";
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount';
@@ -8,12 +8,6 @@ import '../CartWidget/CartWidget.css'
 
 
 function ItemDetail({item}) {
-
-    const [cantidadComprar, setCantidadComprar] = useState();
-
-    const childToParent = (childdata) => {
-        setCantidadComprar(childdata);
-    }
 
     return (
         <Container className="contenedor_detalle">
@@ -25,7 +19,7 @@ function ItemDetail({item}) {
                     <h2>{item.name}</h2> <br></br>
                     <p>{item.description}</p><br></br>
                     <p>{item.price} ARS</p><br></br>
-                    <ItemCount stock={item.stock} item={item} childToParent={childToParent}/>
+                    <ItemCount stock={item.stock} item={item} />
                 </Col>
             </Row>
         </Container>

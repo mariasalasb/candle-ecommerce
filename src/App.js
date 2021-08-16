@@ -8,12 +8,9 @@ import {Container} from "reactstrap";
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import  {CartProvider} from './context/CartContext';
 import Cart from './components/CartWidget/Cart';
+import Confirmation from './components/Formulario/Confirmation';
 
 function App() {
-
-  function onkeydown(e){
-    e.key==='a' ? e.preventDefault() : console.log(e)
-  }
 
   return (
     <div className="App">
@@ -28,6 +25,7 @@ function App() {
               </Route>
                 <Route exact path= '/detail/:detailId' component={ItemDetailContainer}/>
                 <Route exact path='/cart' component={Cart}/>
+                <Route exact path='/confirmation' component={Confirmation}/>
                 </Container>
             </Switch>
         </CartProvider>

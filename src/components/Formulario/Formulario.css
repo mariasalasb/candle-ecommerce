@@ -1,0 +1,34 @@
+.grilla{
+    display: grid;
+    gap:10px 12px;
+    grid-template-columns: repeat(12, 1fr);
+    margin-top: 5px;
+    /*grid-template-rows: ;*/
+}
+input {
+    width: 100%;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    font-size: 1.3rem;
+    opacity: 1; /* Firefox */
+  }
+.boton-de-pago{
+    width: 100%;
+    background-color: #DD9B2D;
+    border: solid 2px #DD9B2D;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.colu-6, .colu-12{
+    margin: 0 auto;
+}
+.colu-6{
+    grid-column-end: span 6;
+}
+.colu-12{
+    grid-column-end: span 12;
+}

@@ -4,8 +4,6 @@ import {Container,Row,Col,Button} from "reactstrap";
 import {CartContext} from '../../context/CartContext';
 import '../CartWidget/CartWidget.css'
 
-//function ItemCount({stock, childToParent})
-
 function ItemCount({stock,item}) {
     const {addToCart} = useContext(CartContext)
 
@@ -17,7 +15,7 @@ function ItemCount({stock,item}) {
 
     const BotonPagar =()=>{
         return<>
-        <Link to='/cart'><Button className='boton-de-pago' >Terminar mi compra</Button></Link>
+        <Link to='/cart'><Button className='boton-de-pago' >Ir al carrito</Button></Link>
         </>
     }
     
@@ -25,8 +23,8 @@ function ItemCount({stock,item}) {
     const Bot = tipoBoton === 'Carrito' ? BotonCarrito : BotonPagar
 
     
-    const [cant,setCantidad]=useState(1)
-    const[initial,setInitial]=useState(1)
+    const [cant,setCantidad]=useState(1);
+    const initial=1;
     
     const handleAdd=()=>{
         if(cant<stock){

@@ -6,16 +6,6 @@ import ItemList from './ItemList';
 
 
 function ItemListContainer({source}){
-  /* const[pokeList, setPokeList]=useState([])
-
-  useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon')
-    .then(data=>data.json())
-    .then(res=> setPokeList(res))
-  
-  }, [])
-  
-  console.log(pokeList) */
 
       const {categoryId} = useParams()
       console.log(categoryId)

@@ -11,7 +11,7 @@ function CartItem() {
             {cart.length!==0 && <div className="section" >
                 {cart.map(i =>
                     <div key={i.item.id} className="grilla">
-                        <img src={i.item.image} className="imagen-producto-mini colu-5"></img>
+                        <img src={i.item.image} className="imagen-producto-mini colu-5" alt={i.item.name}></img>
                         <p className="colu-2">{i.quantity} x</p>
                         <p className="colu-5">{i.item.name} </p>
                     </div>)}

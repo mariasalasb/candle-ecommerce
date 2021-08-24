@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import image1 from './assets/lights.jpg'
 import {Container} from "reactstrap";
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import  {CartProvider} from './context/CartContext';
 import Cart from './components/CartWidget/Cart';
 import Confirmation from './components/Formulario/Confirmation';
+import ItemList from './components/ItemListContainer/ItemList';
 
 function App() {
 
@@ -20,13 +20,12 @@ function App() {
         <Switch>
           {/*<input onKeyDown={onkeydown}></input>*/}
           <Container fluid>
-              <Route exact path="/"> {/*exact path="/category/:categoryId" lo que va luego de : es parametro*/}
-                <ItemListContainer source={image1} />
-              </Route>
-                <Route exact path= '/detail/:detailId' component={ItemDetailContainer}/>
-                <Route exact path='/cart' component={Cart}/>
-                <Route exact path='/confirmation' component={Confirmation}/>
-                </Container>
+              <Route exact path="/" component={ItemListContainer}/> {/*exact path="/category/:categoryId" lo que va luego de : es parametro*/}
+              <Route exact path='/category/:category' component={ItemList}/>
+              <Route exact path= '/detail/:detailId' component={ItemDetailContainer}/>
+              <Route exact path='/cart' component={Cart}/>
+              <Route exact path='/confirmation' component={Confirmation}/>
+              </Container>
             </Switch>
         </CartProvider>
       </Router>

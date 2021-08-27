@@ -17,8 +17,11 @@ De no abrirse automaticamente, acceder a [http://localhost:3000](http://localhos
 ## Dependencias utilizadas
 
 Estilos: Bootstrap [Ver documentacion](https://getbootstrap.com/docs/5.1/getting-started/introduction/).
+
 Estilos de Bootstrap para React: Reactstrap [Ver documentacion](https://reactstrap.github.io/).
+
 Base de datos: Firebase [Ver documentacion](https://firebase.google.com/docs?gclid=CjwKCAjw95yJBhAgEiwAmRrutMLkAJZcT01w3OtkwZijXPdsEEwz8GqMxybjPgtNg42y-gz5W73SqhoCHXMQAvD_BwE&gclsrc=aw.ds).
+
 Navegacion: React-router-dom [Ver documentacion](https://reactrouter.com/web/guides/quick-start).
 
 

@@ -38,22 +38,22 @@ function ItemCount({stock,item}) {
     }
     
     return (
-        <Container>
+        <div className="botones_agregar_carrito">
             <Row>
-                <p><span>{cant}</span></p>
-            </Row>
-            <Row>
-                <Col className="button-operator button-plus"> 
+                <Col className="button-operator "> 
                     <button onClick={handleRemove}>-</button>    
                 </Col>
-                <Col className="button-operator">
+                <Col className="cantidad">
+                    <p><span>{cant}</span></p>
+                </Col>
+                <Col className="button-operator button-plus">
                     <button onClick={handleAdd}>+</button>    
                 </Col>
             </Row>
             <Row>
                 <Bot/>
             </Row>
-        </Container>
+        </div>
     )
 }
 

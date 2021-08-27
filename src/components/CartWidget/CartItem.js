@@ -11,9 +11,9 @@ function CartItem() {
             {cart.length!==0 && <div className="section" >
                 {cart.map(i =>
                     <div key={i.item.id} className="grilla">
-                        <img src={i.item.image} className="imagen-producto-mini colu-5" alt={i.item.name}></img>
-                        <p className="colu-2">{i.quantity} x</p>
-                        <p className="colu-5">{i.item.name} </p>
+                        <img src={i.item.image} className="imagen-producto-mini " alt={i.item.name}></img>
+                        <p className="cantidad_mini">{i.quantity} x</p>
+                        <p className="nombre_mini">{i.item.name} </p>
                     </div>)}
                 <Link to ='/cart'><button className="boton2">Ver Carrito</button></Link>
             </div> }

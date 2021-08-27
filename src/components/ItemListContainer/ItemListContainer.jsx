@@ -12,8 +12,8 @@ function ItemListContainer({source}){
       return(
         <>
       <div className="contenedor">
-        <div className="image">
-          <img src={image1} alt="Avatar" className="image_img" />
+        <div className="image velas">
+          <img src={image1} alt="Seccion de velas" className="image_img" />
             <Link to='/category/velas'>
               <div className="image_overlay">
                 <div className="image_title">Velas</div>
@@ -23,7 +23,7 @@ function ItemListContainer({source}){
           </div>
         
         
-          <div className="image">
+          <div className="image luces">
             <img src={image2} alt="Sección de luces" className="image_img"/>
               <Link to='/category/luces'> 
                 <div className="image_overlay">
@@ -33,7 +33,7 @@ function ItemListContainer({source}){
               </Link>
           </div>
       </div>
-      <ItemListTopSale/>
+      <ItemListTopSale titulo='TOP SALE'/>
       </>
     );
   }

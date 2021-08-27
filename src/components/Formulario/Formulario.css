@@ -7,6 +7,9 @@
 }
 input {
     width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    grid-column-end: span 6;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;
@@ -26,9 +29,17 @@ input {
 .colu-6, .colu-12{
     margin: 0 auto;
 }
-.colu-6{
-    grid-column-end: span 6;
-}
+
 .colu-12{
     grid-column-end: span 12;
+}
+.texto{
+    color: #DD9B2D;
+    font-weight: 700;
+}
+@media screen and (max-width:960px){
+    input{
+        grid-column-end: span 12;
+        font-size: 2rem;
+    }
 }

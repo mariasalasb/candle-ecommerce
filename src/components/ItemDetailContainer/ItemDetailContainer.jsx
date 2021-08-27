@@ -17,7 +17,7 @@ function ItemDetailContainer() {
             const dbQuery=getFirestore()
             dbQuery.collection('items').doc(detailId).get()
             .then(resp=> setItemDet({id: resp.id, ...resp.data()}))
-        }, [])
+        }, [detailId])
 
         /*"ObckBAsNyRe4RDkCyFqa" dbQuery.collection('items').get()
             .then(resp=> setItemDet(resp.docs.map(ite=>({...ite.data(), id: ite.id}) )))

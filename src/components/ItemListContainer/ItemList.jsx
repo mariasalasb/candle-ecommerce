@@ -16,17 +16,21 @@ function ItemList() {
       const dbQuery=getFirestore()
       dbQuery.collection('items').where("category","==",category).get()
       .then(resp=> setItemList(resp.docs.map(ite=>({...ite.data(), id: ite.id}),setLoading(false) )))
-  }, [])
+  }, [category])
 
   console.log(itemList)
 
     return (
-        <Row>
+        <Row className="catalogo">
             {loading && 'CARGANDO..'}
             {!loading && itemList.map((item)=>{
                 return(
-                    <Col md={12} lg={4} key={item.id}>
-                        <Link to={`/detail/${item.id}`}><img src={item.image} alt={item.name} className='imagen_catalogo'></img></Link>
+                    <Col md={12} lg={3} key={item.id}>
+                        <Link to={`/detail/${item.id}`} >
+                            <div className="overlay">
+                                <img src={item.image} alt={item.name} className='imagen_catalogo'></img>
+                            </div>
+                        </Link>
                         <p>{item.name}</p>
                         <p>{item.price} ARS</p>
                     </Col>

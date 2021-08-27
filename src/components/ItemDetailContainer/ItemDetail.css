@@ -1,9 +1,20 @@
 .contenedor_detalle{
-    margin-top: 5%;
+    margin-top: 1%;
+    padding:1%;
 }
-.imagen_detalle_producto{
+.detalle_producto{
     display: flex;
     justify-content: flex-end;
+}
+.imagen_detalle{
+    width: 350px;
+    height: 350px;
+    border-radius: 3px;
+}
+.nombre_producto{
+    color: white;
+    font-weight: 500;
+    font-size: 2.2rem;
 }
 
 @media screen and (max-width:960px){
@@ -11,7 +22,7 @@
         background-color: blue;
         margin-top: 0;
     }
-    .imagen_detalle_producto{
+   .detalle_producto{
         justify-content: center;
     }
 }

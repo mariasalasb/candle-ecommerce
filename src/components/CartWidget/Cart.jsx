@@ -36,15 +36,15 @@ function Cart() {
             <div className="section" >
                 {cart.map(i =>
                     <div key={i.item.id} className="grilla">
-                        <img src={i.item.image} className="imagen-resumen colu-3" alt={i.item.name}></img>
-                        <p className="colu-3">{i.item.name} </p>
-                        <p className="colu-2">{i.quantity} x</p>
-                        <p className="colu-2">{(i.quantity)*(i.item.price)} ARS</p>
-                        <i class="fas fa-trash-alt colu-2" onClick={() => removeItem(i.item.id)}></i>                
+                        <img src={i.item.image} className="imagen_resumen" alt={i.item.name}></img>
+                        <p className="nombre_producto">{i.item.name} </p>
+                        <p className="cantidad_producto">{i.quantity} x</p>
+                        <p className="texto_producto">{(i.quantity)*(i.item.price)} ARS</p>
+                        <i class="fas fa-trash-alt trash_producto" onClick={() => removeItem(i.item.id)}></i>                
                     </div>)}
                 <div className="grilla">
-                    <h2 className="colu-9 total">Total:</h2>
-                    <h2 className="colu-3">{price()}</h2>
+                    <h2 className=" total">Total:</h2>
+                    <h2 className=" price">{price()}</h2>
                 </div>
                 <>
                     <Bot />

@@ -4,7 +4,7 @@ import {Row,Col} from "reactstrap";
 import { getFirestore } from '../../servicios/firebaseService'
 import './ItemListContainer.css'
 
-function ItemListTopSale() {
+function ItemListTopSale({titulo}) {
     const[itemList, setItemList]=useState([])
     const[loading,setLoading]=useState(true)
 
@@ -18,7 +18,7 @@ function ItemListTopSale() {
 
     return (
         <div className="topsale">
-        <div className="section_title">TOP SALE</div>
+        <div className="section_title">{titulo}</div>
         <div className="contenedor2">
             {loading && 'CARGANDO..'}
                 {!loading && itemList.map((item)=>{

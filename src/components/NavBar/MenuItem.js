@@ -14,9 +14,4 @@ export const MenuItems=[
         url: '/category/luces',
         cName: 'nav-links'
     },
-    {
-        title: 'Contáctanos',
-        url: '/category/contacto',
-        cName: 'nav-links'
-    }
 ]

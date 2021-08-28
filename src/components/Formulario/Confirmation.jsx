@@ -1,11 +1,15 @@
 import React, {useContext,useEffect} from 'react'
+import {useParams} from 'react-router-dom'
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom'
 import './Formulario.css'
 
-function Confirmation({orderId, style}) {
-    const {setCart}=useContext(CartContext);
+function Confirmation({style}) {
+    //function Confirmation({orderId,style}) {
+    const {orderId}=useContext(CartContext);
+    //const {orderId}=useParams()
 
+    
     
 
     return (

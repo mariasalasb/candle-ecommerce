@@ -1,12 +1,14 @@
 import React, {useContext,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {CartContext} from '../../context/CartContext';
+import Confirmation from '../Formulario/Confirmation';
 import Formulario from '../Formulario/Formulario';
 import './CartWidget.css'
 
 
 function Cart() {
     const {cart,removeItem,price}=useContext(CartContext);
+    //console.log(props)
 
     /*const datos = [{
         name: 'Maria',
@@ -21,7 +23,7 @@ function Cart() {
     
     const BotonPagar =()=>{
         return<>
-          <Formulario  />
+          <Formulario/>
         </>
     }
     
@@ -51,10 +53,8 @@ function Cart() {
                 </>
             </div> }
 
-            {cart.length===0 && <div className="section" >
-            <h2 className="colu-12 texto">No hay ítems en tu carrito</h2>
-            <Link to ='/'><button className="boton">Volver a la tienda</button></Link>
-        </div> }
+            {cart.length===0 && 
+            <Confirmation/> }
 
         </>
     )

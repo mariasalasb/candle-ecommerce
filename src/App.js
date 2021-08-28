@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import {Container} from "reactstrap";
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import  {CartProvider} from './context/CartContext';
+import Formulario from './components/Formulario/Formulario';
 import Cart from './components/CartWidget/Cart';
 import Confirmation from './components/Formulario/Confirmation';
 import ItemList from './components/ItemListContainer/ItemList';
@@ -23,7 +24,7 @@ function App() {
               <Route exact path='/category/:category' component={ItemList}/>
               <Route exact path= '/detail/:detailId' component={ItemDetailContainer}/>
               <Route exact path='/cart' component={Cart}/>
-              <Route exact path='/confirmation' component={Confirmation}/>
+              <Route exact path='/confirmation/:orderId' component={Confirmation}/>
               </Container>
             </Switch>
         </CartProvider>

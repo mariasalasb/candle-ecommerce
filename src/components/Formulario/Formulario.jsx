@@ -1,5 +1,5 @@
 import React, {useContext,useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Redirect,Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import { getFirestore } from '../../servicios/firebaseService'
 import Confirmation from './Confirmation';
@@ -7,8 +7,9 @@ import 'firebase/firestore'
 import './Formulario.css'
 
 function Formulario() {
-  const {cart,price}=useContext(CartContext);
+//<Confirmation orderId={orderId} style={confirmationStyle} />
 
+  const {cart,price,setCart,orderId, setOrderId}=useContext(CartContext);
   const [buyer, setBuyer] = useState({})
 
   const handleChange = (event)=>{
@@ -19,7 +20,7 @@ function Formulario() {
     console.log(order);
   };
 
-  const [orderId, setOrderId] = useState()
+  //const [orderId, setOrderId] = useState()
 
   const order={buyer, cart, total: price()}
 
@@ -34,7 +35,9 @@ function Formulario() {
           setOrderId(results)
           console.log(results)
           setShow(!show);
-          //alert('Tu pedido es la orden IDDD:' +results )
+          setTimeout(()=>{
+            setCart([]);
+          });
         })
       .catch(err=> console.log(err))
       console.log(order);
@@ -103,8 +106,7 @@ function Formulario() {
             />
             <button type="submit" form="form1" value="Submit" className="boton-de-pago colu-12" >Confirmar y Finalizar</button>
           </form> 
-
-          <Confirmation orderId={orderId} style={confirmationStyle}/>
+          <Confirmation  style={confirmationStyle} />
 
         </>
     )

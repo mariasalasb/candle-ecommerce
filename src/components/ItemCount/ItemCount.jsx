@@ -31,7 +31,8 @@ function ItemCount({stock,item}) {
 
     useEffect(() => {
         try{
-            setCantidad(1)
+            setCantidad(1);
+            setBoton('Carrito')
         } catch(error){
             console.log(error)
         }

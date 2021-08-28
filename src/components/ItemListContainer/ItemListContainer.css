@@ -57,7 +57,7 @@ p{
 }
 .image{
     position: relative;
-    width: 700px;
+    width: 100%;
     padding-top: 20px;
     border-radius: 3px;
     background: rgba(78,53,22,1);

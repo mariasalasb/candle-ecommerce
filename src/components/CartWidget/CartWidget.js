@@ -22,13 +22,6 @@ function CartWidget({onClick}){
         >
             <PopoverBody>
                 <CartItem/>
-                {/* {
-                    cart.map(cart=>(
-                        <div key={cart.id}>
-                            <CartItem stock={cart.stock} initial={cart.init} image={cart.image} nombre={cart.nombre} /> 
-                        </div>
-                    ))
-                } */}
             </PopoverBody>
         </Popover>
       </>

@@ -37,7 +37,6 @@ function Formulario() {
           //alert('Tu pedido es la orden IDDD:' +results )
         })
       .catch(err=> console.log(err))
-      
       console.log(order);
     }
     else{
@@ -47,9 +46,6 @@ function Formulario() {
 };
 
   const [show, setShow] = useState(true);
-  /*const handleClick = () => {
-    setShow(!show);
-  };*/
 
   const formStyle = {
     display: show ? 'grid' : 'none',

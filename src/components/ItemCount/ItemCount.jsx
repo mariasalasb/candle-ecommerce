@@ -1,10 +1,13 @@
-import React, {useState,useContext}  from 'react'
+import React, {useState,useContext,useEffect}  from 'react'
+import {useParams} from 'react-router-dom'
 import {Link} from 'react-router-dom'
-import {Container,Row,Col,Button} from "reactstrap";
+import {Row,Col,Button} from "reactstrap";
 import {CartContext} from '../../context/CartContext';
 import '../CartWidget/CartWidget.css'
 
 function ItemCount({stock,item}) {
+    const {detailId} = useParams();
+
     const {addToCart} = useContext(CartContext)
 
     const BotonCarrito =()=>{
@@ -25,6 +28,14 @@ function ItemCount({stock,item}) {
     
     const [cant,setCantidad]=useState(1);
     const initial=1;
+
+    useEffect(() => {
+        try{
+            setCantidad(1)
+        } catch(error){
+            console.log(error)
+        }
+    }, [detailId])
     
     const handleAdd=()=>{
         if(cant<stock){

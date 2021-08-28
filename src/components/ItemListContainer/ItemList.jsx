@@ -18,8 +18,6 @@ function ItemList() {
       .then(resp=> setItemList(resp.docs.map(ite=>({...ite.data(), id: ite.id}),setLoading(false) )))
   }, [category])
 
-  console.log(itemList)
-
     return (
         <Row className="catalogo">
             {loading && 'CARGANDO..'}
